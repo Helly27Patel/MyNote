@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddNoteActivity"
+    android:background="@color/black_700">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="@string/app_name"
+        app:titleTextColor="@color/yellow_700"
+        android:theme="@style/Theme.MaterialComponents"
+        android:elevation="4dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edt_layout"
+        android:padding="12dp"
+        android:hint="Note Title"
+        android:textColorHint="@color/yellow_700"
+        android:layout_margin="7dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edt_layout"
+        android:padding="12dp"
+        android:hint="Add Notes Here...."
+        android:textColorHint="@color/yellow_700"
+        android:layout_margin="7dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_layout"
+        android:backgroundTint="@color/yellow_700"
+        android:text="Add Note"/>
+
+</LinearLayout>
