@@ -14,4 +14,21 @@
         <!-- Customize your theme here. -->
         <item name="android:navigationBarColor">@color/black_700</item>
     </style>
+
+    <style name="btnStyle" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="background">@drawable/btn_layout</item>
+        <item name="android:background">@drawable/btn_layout</item>
+        <item name="backgroundTint">@color/yellow_700</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_margin">10dp</item>
+    </style>
+
+    <style name="edtStyle">
+        <item name="android:textColorHint">@color/yellow_700</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_margin">7dp</item>
+        <item name="android:textColor">@color/yellow_700</item>
+        <item name="android:background">@drawable/edt_layout</item>
+    </style>
+
 </resources>

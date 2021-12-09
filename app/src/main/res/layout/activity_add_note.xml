@@ -4,42 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black_700"
     android:orientation="vertical"
-    tools:context=".AddNoteActivity"
-    android:background="@color/black_700">
+    tools:context=".AddNoteActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:title="@string/app_name"
-        app:titleTextColor="@color/yellow_700"
+        android:elevation="4dp"
         android:theme="@style/Theme.MaterialComponents"
-        android:elevation="4dp"/>
+        app:navigationIcon="@drawable/ic_baseline_arrow_back"
+        app:title="Add Notes"
+        app:titleTextColor="@color/yellow_700" />
 
     <EditText
+        android:id="@+id/edtTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="7dp"
         android:background="@drawable/edt_layout"
-        android:padding="12dp"
         android:hint="Note Title"
-        android:textColorHint="@color/yellow_700"
-        android:layout_margin="7dp"/>
+        android:padding="12dp"
+        android:textColorHint="@color/yellow_700" />
 
     <EditText
+        android:id="@+id/edtNote"
+        style="@style/edtStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/edt_layout"
-        android:padding="12dp"
-        android:hint="Add Notes Here...."
-        android:textColorHint="@color/yellow_700"
-        android:layout_margin="7dp"/>
+        android:layout_weight="1"
+        android:gravity="top"
+        android:hint="Add Notes Here...." />
 
     <Button
+        android:id="@+id/btnAddNote"
+        style="@style/btnStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/btn_layout"
-        android:backgroundTint="@color/yellow_700"
-        android:text="Add Note"/>
+        android:text="Add Note" />
 
 </LinearLayout>
