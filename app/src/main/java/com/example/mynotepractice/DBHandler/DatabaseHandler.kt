@@ -44,4 +44,22 @@ class DatabaseHandler(context:Context):SQLiteOpenHelper(context, DATABASE_NAME,n
         db.close()
         return response
     }
+
+    fun readNotes():ArrayList<Notes> {
+        val db = this.readableDatabase
+
+        val notesCursor = db.rawQuery("SELECT * FROM $TABLE_NOTE", null)
+
+        val notesList: ArrayList<Notes> = ArrayList()
+
+        if (notesCursor.moveToFirst()) {
+            do {
+                notesList.add(Notes(notesCursor.getInt(0),
+                        notesCursor.getString(1),
+                        notesCursor.getString(2)))
+            } while (notesCursor.moveToNext())
+        }
+
+        return notesList
+    }
 }
