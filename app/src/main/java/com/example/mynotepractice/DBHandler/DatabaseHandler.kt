@@ -62,4 +62,13 @@ class DatabaseHandler(context:Context):SQLiteOpenHelper(context, DATABASE_NAME,n
 
         return notesList
     }
+
+    fun deleteNotes(id:Int):Int{
+
+        var db = this.writableDatabase
+
+        var rows = db.delete(TABLE_NOTE,"$NOTE_ID=?", arrayOf<String>(id.toString()))
+
+        return rows
+    }
 }

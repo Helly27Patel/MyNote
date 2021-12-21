@@ -53,6 +53,7 @@ class AddNoteActivity : AppCompatActivity() {
             if (rows > -1){
                 Toast.makeText(this,"Notes Added Successfully.",Toast.LENGTH_LONG).show()
                 Log.d("AddNoteActivity","data inserted with rows: $rows")
+                finish()
             }else{
                 Toast.makeText(this,"Notes Failed!!.",Toast.LENGTH_LONG).show()
             }

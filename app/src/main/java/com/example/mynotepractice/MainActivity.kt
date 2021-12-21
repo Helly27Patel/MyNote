@@ -36,6 +36,11 @@ class MainActivity : AppCompatActivity() {
         recyclerView.adapter = NotesAdapter(this,notesList)
     }
 
+    override fun onResume() {
+        super.onResume()
+        ViewNotes()
+    }
+
     override fun onBackPressed() {
         super.onBackPressed()
     }
