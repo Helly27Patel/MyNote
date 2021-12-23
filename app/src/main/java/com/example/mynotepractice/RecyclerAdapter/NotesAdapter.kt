@@ -1,14 +1,17 @@
 package com.example.mynotepractice.RecyclerAdapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mynotepractice.DBHandler.DatabaseHandler
+import com.example.mynotepractice.EditNoteActivity
 import com.example.mynotepractice.Model.Notes
 import com.example.mynotepractice.R
 
@@ -18,6 +21,7 @@ class NotesAdapter(val context:Context,val notesList:ArrayList<Notes>) : Recycle
         var txtTitle:TextView = itemView.findViewById(R.id.txtNotesTitle)
         var txtNotes:TextView = itemView.findViewById(R.id.txtNotesText)
         var imgDelete:ImageView = itemView.findViewById(R.id.imgDelete)
+        var parentLayout:LinearLayout = itemView.findViewById(R.id.parentLayout)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -42,6 +46,11 @@ class NotesAdapter(val context:Context,val notesList:ArrayList<Notes>) : Recycle
             }
         }
 
+        holder.parentLayout.setOnClickListener {
+            var intent:Intent = Intent(context,EditNoteActivity::class.java)
+            intent.putExtra("_id",notesList[position].id)
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {

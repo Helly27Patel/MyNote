@@ -63,11 +63,39 @@ class DatabaseHandler(context:Context):SQLiteOpenHelper(context, DATABASE_NAME,n
         return notesList
     }
 
+    fun readSpecificNotes(id:Int):Notes {
+        val db = this.readableDatabase
+
+        val notesCursor = db.rawQuery("SELECT * FROM $TABLE_NOTE WHERE $NOTE_ID=$id", null)
+
+        notesCursor.moveToFirst()
+
+        val notesList: Notes = Notes(notesCursor.getInt(0),
+                        notesCursor.getString(1),
+                        notesCursor.getString(2))
+
+        db.close()
+        return notesList
+    }
+
+
     fun deleteNotes(id:Int):Int{
 
         var db = this.writableDatabase
 
         var rows = db.delete(TABLE_NOTE,"$NOTE_ID=?", arrayOf<String>(id.toString()))
+
+        return rows
+    }
+
+    fun updateNotes(note:Notes):Int{
+        var db = this.writableDatabase
+
+        var contentValues = ContentValues()
+        contentValues.put(NOTE_TITLE,note.title)
+        contentValues.put(NOTE_TEXT,note.note)
+
+        var rows = db.update(TABLE_NOTE,contentValues,"$NOTE_ID=?", arrayOf<String>(note.id.toString()))
 
         return rows
     }

@@ -1,9 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/black_700"
     tools:context=".EditNoteActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        app:titleTextColor="@color/yellow_700"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black_700"
+        app:title="Edit Note"
+        app:navigationIcon="@drawable/ic_baseline_arrow_back"
+        android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar"
+        android:elevation="4dp"/>
+    <EditText
+        android:id="@+id/edtUpdateTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Title"
+        style="@style/edtStyle"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/edtUpdateNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Add Notes Here..."
+        android:layout_weight="1"
+        android:gravity="top"
+        style="@style/edtStyle"/>
+
+    <Button
+        android:id="@+id/btnUpdateNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Edit"
+        style="@style/btnStyle"></Button>
+
+</LinearLayout>

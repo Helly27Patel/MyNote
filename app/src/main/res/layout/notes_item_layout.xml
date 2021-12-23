@@ -6,6 +6,7 @@
     android:orientation="vertical"
     android:background="@drawable/item_layout"
     android:layout_margin="10dp"
+    android:id="@+id/parentLayout"
     android:padding="10dp">
 
     <LinearLayout
@@ -20,6 +21,7 @@
             android:id="@+id/txtNotesTitle"
             android:textStyle="bold"
             android:layout_weight="1"
+            android:textSize="22sp"
             android:layout_marginBottom="3dp"
             android:textColor="@color/white"/>
 
@@ -31,13 +33,12 @@
 
     </LinearLayout>
 
-
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="This is Notes Text Sample"
         android:id="@+id/txtNotesText"
+        android:textSize="18sp"
         android:textColor="@color/white"/>
 
 </LinearLayout>
